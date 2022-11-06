@@ -1,9 +1,14 @@
 import Link from "next/link";
+import Heading from "../components/Heading";
+import styles from "../styles/Home.module.scss";
 
 const Index = () => {
+  console.log(styles)
   return (
     <>
-      <h1>Hello world</h1>
+      <div className={styles.wrapper}>
+        <Heading text='My next.js application' />
+      </div>
       <Link href="/about">
         About
       </Link>
