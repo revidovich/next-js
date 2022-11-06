@@ -7,9 +7,20 @@ const Index = () => {
       <Link href="/about">
         About
       </Link>
+      <Link href="/posts">
+        Posts
+      </Link>
+      <Link href="/users">
+        Users
+      </Link>
       <style jsx>
         {`
-
+          h1 {
+            color: #255;
+          }
+          a {
+            color: #255;
+          }
         `}
       </style>
     </>
