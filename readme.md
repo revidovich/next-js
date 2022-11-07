@@ -19,3 +19,5 @@ npx create-next-app next-js
     }
   }, [])
 ```
+
+ssr (by 1) vs ssg (all)

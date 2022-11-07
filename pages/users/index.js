@@ -19,17 +19,6 @@ export const getStaticProps = async () => {
 };
 
 const Index = ({ users }) => {
-
-  // const [users, setUsers] = useState(null);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await fetch('https://jsonplaceholder.typicode.com/users');
-  //     const data = await response.json();
-  //     setUsers(data);
-  //   };
-  //   fetchData();
-  // }, []);
-
   return (
     <>
       <Head>
@@ -40,8 +29,7 @@ const Index = ({ users }) => {
         {users && users.map(({ id, name, email }) => (
           <li key={id}>
             <strong>
-                {name}
-              <Link href="./users/user">
+              <Link href={`./users/${id}`}>
                 {name}
               </Link>
             </strong> ({email})
