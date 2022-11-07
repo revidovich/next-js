@@ -19,5 +19,7 @@ npx create-next-app next-js
     }
   }, [])
 ```
-
-ssr (by 1) vs ssg (all)
+  
+ssr (by 1 - getServerSideProps) vs ssg (all - getStaticPaths)  
+  
+  
