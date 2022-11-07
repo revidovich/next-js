@@ -1,0 +1,17 @@
+.nav{
+  display: flex;
+  height: 100px;
+}
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ed5777;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+.link:hover {
+  background-color: #ed57775e;
+  filter: brightness(150%);
+}

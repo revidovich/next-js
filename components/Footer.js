@@ -1,10 +1,13 @@
-import Heading from "./Heading";
-
+import Link from "next/link";
+import styles from '../styles/Footer.module.scss';
+import IconGh from '../svg/gh';
 
 const Footer = () => {
   return (
-    <footer>
-      <Heading tag='h3' text='Разработчик: https://github.com/revidovich' />
+    <footer className={styles.footer}>
+      <Link href='https://github.com/revidovich'>
+        <IconGh className={styles.icon} />
+      </Link>
     </footer>
   );
 };
