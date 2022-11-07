@@ -5,7 +5,7 @@ import IconGh from '../svg/gh';
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Link href='https://github.com/revidovich'>
+      <Link href='https://github.com/revidovich' target="_blank" rel="noreferrer">
         <IconGh className={styles.icon} />
       </Link>
     </footer>

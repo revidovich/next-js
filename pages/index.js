@@ -1,19 +1,12 @@
-import Link from "next/link";
+import Image from "next/image";
 import Heading from "../components/Heading";
+import starImg from '../public/logo.png';
 
 const Index = () => {
   return (
     <>
       <Heading text='My next.js application' />
-      <Link href="/about">
-        About
-      </Link>
-      <Link href="/posts">
-        Posts
-      </Link>
-      <Link href="/users">
-        Users
-      </Link>
+      <Image src={starImg} width='150' height='150' alt='' placeholder="blur"/>
     </>
   );
 };
