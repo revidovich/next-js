@@ -2,16 +2,21 @@
   display: flex;
   height: 100px;
 }
-.link {
+.link, .active {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ed5777;
   margin: auto;
   height: 100%;
   width: 100%;
+  background-color: #ed5777;
+  transition: all ease-in-out .51s;
+  box-shadow: 0px 0px 0px 0px #fff inset;
 }
-.link:hover {
+.active {
+  box-shadow: 0px -3px 0px 0px #fff inset;
+}
+.active:hover, .link:hover {
   background-color: #ed57775e;
   filter: brightness(150%);
 }
