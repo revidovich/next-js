@@ -1,0 +1,18 @@
+.list {
+  text-align: left;
+  overflow-y: auto;
+}
+.list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.list::-webkit-scrollbar-track {
+  background:  #ed5777;;
+  border-radius: 20px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: pink;
+  border-radius: 20px;
+  border: 1px solid  #ed5777;;
+}
