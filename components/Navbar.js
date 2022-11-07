@@ -2,20 +2,21 @@ import Link from "next/link";
 import styles from "../styles/Navbar.module.scss";
 
 const Navbar = () => {
+
+  const navigation = [
+    {id: 1, title: 'Home', path: '/'},
+    {id: 2, title: 'Posts', path: '/posts'},
+    {id: 3, title: 'Users', path: '/users'},
+    {id: 4, title: 'Contacts', path: '/contacts'},
+    {id: 3, title: 'About', path: '/about'},
+  ]
   return (
     <nav className={styles.nav}>
-      <Link href="/posts" className={styles.link}>
-        Posts
+      {navigation.map(({id, title, path}) => (
+      <Link key={id} href={path} className={styles.link}>
+        {title}
       </Link>
-      <Link href="/users" className={styles.link}>
-        Users
-      </Link>
-      <Link href="/contacts" className={styles.link}>
-        Contacts
-      </Link>
-      <Link href="/about" className={styles.link}>
-        About
-      </Link>
+      ))}
     </nav>
   );
 };
