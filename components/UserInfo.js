@@ -16,7 +16,7 @@ const UserInfo = ({ user }) => {
       </div>
       <div>
         <strong>Address:</strong>
-        {`{${street}, ${suite} ${city} ${zipcode}}`}
+        {` ${street}, ${suite} ${city} ${zipcode}`}
       </div>
     </>
   );
