@@ -1,4 +1,4 @@
-const Heading = ({ tag, text}) => {
+const Heading = ({ tag, text }) => {
   const Tag = tag || 'h1';
   return (
     <Tag>

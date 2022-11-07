@@ -7,7 +7,7 @@ const Posts = () => {
       <Heading
         text='Posts list'
       />
-      <p>post 1</p>
+      <p>This is post № 1</p>
     </>
   );
 };

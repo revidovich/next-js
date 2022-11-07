@@ -9,7 +9,7 @@ const Navbar = () => {
     {id: 2, title: 'Posts', path: '/posts'},
     {id: 3, title: 'Users', path: '/users'},
     {id: 4, title: 'Contacts', path: '/contacts'},
-    {id: 3, title: 'About', path: '/about'},
+    {id: 5, title: 'About', path: '/about'},
   ];
 
   const { pathname } = useRouter();
