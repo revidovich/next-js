@@ -1,9 +1,13 @@
+import Head from "next/head";
 import Link from "next/link";
 import Heading from '../components/Heading';
 
 const About = () => {
   return (
     <>
+      <Head>
+        <title>About</title>
+      </Head>
       <Heading text='About' />
       <Link href="/about">
         About

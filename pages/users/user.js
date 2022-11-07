@@ -1,9 +1,14 @@
-import React from 'react';
+import Head from "next/head";
 import Heading from '../../components/Heading';
 
 const user = () => {
   return (
-    <Heading text='User1' />
+    <>
+      <Head>
+        <title>User1</title>
+      </Head>
+      <Heading text='User1' />
+    </>
   );
 };
 
