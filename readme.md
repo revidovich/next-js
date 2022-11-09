@@ -22,4 +22,6 @@ npx create-next-app next-js
   
 ssr (by 1 - getServerSideProps) vs ssg (all - getStaticPaths)  
   
-  
+Решить проблему с svg  
+    
+добавила тс
