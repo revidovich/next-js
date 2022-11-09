@@ -1,6 +1,6 @@
 ## Next js
 
-Ссылка: (https://next-f8ailyqpn-revidovich.vercel.app/)[https://next-f8ailyqpn-revidovich.vercel.app/ ] 
+Ссылка: [https://next-f8ailyqpn-revidovich.vercel.app/](https://next-f8ailyqpn-revidovich.vercel.app/) 
 
 npx create-next-app next-js  
 % code .  
