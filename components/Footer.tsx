@@ -27,20 +27,20 @@ const Footer:FC = () => {
   return (
     <footer className={styles.footer}>
       <a href='https://t.me/revidovich' target="_blank" rel="noreferrer">
-        <IconTg className={styles.icon} />
-        {/* <Image src={IconTg} className={styles.icon} /> */}
+        <IconTg />
+        {/* <Image src={IconTg} /> */}
       </a>
       <a href='https://github.com/revidovich' target="_blank" rel="noreferrer">
-        <IconGh className={styles.icon} />
+        <IconGh />
       </a>
       <a href='https://gitlab.dsgrad.devops.lanit-tercom.com/arevidovich' target="_blank" rel="noreferrer">
-        <IconGl className={styles.icon} />
+        <IconGl />
       </a>
       <a href='https://twitter/arevidovich' target="_blank" rel="noreferrer">
-        <IconTw className={styles.icon} />
+        <IconTw />
       </a>
       <a href='https://nextjs.org' target="_blank" rel="noreferrer">
-        <IconNx className={styles.icon} />
+        <IconNx />
       </a>
     </footer>
   );
