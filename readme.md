@@ -1,9 +1,13 @@
 ## Next js
 
+Ссылка: (https://next-f8ailyqpn-revidovich.vercel.app/)[https://next-f8ailyqpn-revidovich.vercel.app/ ] 
+
 npx create-next-app next-js  
 % code .  
 
-Возможно закину pathname в мобикс?
+### В планах  
+
+Закинуть pathname в мобикс?
 ```
   useEffect( () => {
       console.log('00000', timer)
