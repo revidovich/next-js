@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 type headingProps = {
-  tag?: string,
+  tag?: any,
   text: string,
 }
 
