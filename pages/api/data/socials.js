@@ -1,28 +1,33 @@
-
-import IconGh from '../svg/gh';
-import IconGl from '../svg/gl';
-import IconTg from '../svg/tg';
-import IconTw from '../svg/tw';
+import IconGh from '../../../svg/gh';
+import IconGl from '../../../svg/gl';
+import IconTg from '../../../svg/tg';
+import IconTw from '../../../svg/tw';
+import IconNx from '../../../svg/nx';
 
 export const socials = [
   {
-    name: 'Telegram',
-    icon: IconTg,
-    link: 'https://t.me/revidovich',
+    id: 'Telegram',
+    path: 'https://t.me/revidovich',
+    img: IconTg,
   },
   {
-    name: 'Github',
-    link: 'https://github.com/revidovich',
-    icon: IconGh,
+    id: 'Github',
+    path: 'https://github.com/revidovich',
+    img: IconGh,
   },
   {
-    name: 'GitLab',
-    link: 'https://gitlab.dsgrad.devops.lanit-tercom.com/arevidovich',
-    icon: IconGl,
+    id: 'GitLab',
+    path: 'https://gitlab.dsgrad.devops.lanit-tercom.com/arevidovich',
+    img: IconGl,
   },
   {
-    name: 'Twitter',
-    link: 'https://twitter/arevidovich',
-    icon: IconTw,
+    id: 'Twitter',
+    path: 'https://twitter/arevidovich',
+    img: IconTw,
+  },
+  {
+    id: 'Next js',
+    path: 'https://nextjs.org',
+    img: IconNx,
   }
 ]

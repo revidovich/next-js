@@ -1,11 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
 import Heading from "../components/Heading";
-import starImg from '../public/logo.png';
 import Socials from '../components/Socials';
 
 export const getStaticProps = async () => {
-  const response = await fetch('http://localhost:3000/api/socials/');
+  const response = await fetch(`${process.env.API_HOST}/socials/`);
   const data = await response.json();
 
   if (!data) {
@@ -15,7 +13,7 @@ export const getStaticProps = async () => {
   }
 
   return {
-    props: { posts: data },
+    props: { socials: data },
   }
 };
 
@@ -26,7 +24,6 @@ const Index = ({ socials }) => {
         <title>Next.js</title>
       </Head>
       <Heading text='My next.js application' />
-      <Image src={starImg} width='150' height='150' alt='' placeholder="blur" />
       <Socials socials={socials} />
     </>
   );
