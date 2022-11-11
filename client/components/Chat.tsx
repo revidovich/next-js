@@ -11,37 +11,66 @@ const Chat = () => {
 
   const handleSend = (event) => {
     event.preventDefault();
-    socket.emit('handleSend', { client: nameValue, post: msgValue })
+    sendPing({ client: nameValue, post: msgValue });
+    setMsgValue('');
   };
 
+  const sendPing = (data) => {
+    socket.emit('ping', data);
+  };
+
+  const handleClear = () => {
+    socket.emit('clear');
+    setHistory([{ client: '', post: '' }]);
+  };
+
+
+
   useEffect(() => {
-    socket.emit('openChat');
+    // socket.on('connect', () => {
+    //   setHistory([]);
+    // });
+
+    // socket.on('disconnect', () => {
+    //   setHistory([]);
+    // });
+
+    socket.on('pong', (messages) => {
+      setHistory(messages);
+    });
+
+    return () => {
+      // socket.off('connect');
+      // socket.off('disconnect');
+      socket.off('pong');
+    };
   }, []);
 
-  // socket.on('openChat', (data) => {
-  //   setHistory([...history, data]);
-  // });
-
-  socket.on('getHistory', (data) => {
-    setHistory([data]);
-  });
-
-  socket.on('pull', (msgPulled) => {
-    setHistory(msgPulled);
-    // setHistory([...history, data]);
-    // console.log(history);
-  });
+  // useEffect(() => {
+  //   socket.on('connect', () => {
+  //     setHistory([]);
+  //   });
+  // }, [socket.connected]);
 
   return (
     <>
-      <ul className={styles.list}>
-        {history && history.map((el, index) => {
-          if (el.client) {
-            return (<li key={index}>{`${el.client} said: ${el.post}`}</li>
-            )}
-        })}
-      </ul>
-      <form id='messageForm' onSubmit={handleSend}>
+      <div className={styles.chat}>
+        <ul className={styles.ul}>
+          {history && history.map((el, index) => {
+            if (el.client) {
+              return (
+                <li key={index} className={styles.li}>
+                  <p className={styles.p}>
+                    {`${el.client} said: ${el.post}`}
+                  </p>
+                </li>
+              )
+            }
+          })}
+        </ul>
+
+      </div>
+      <form id='messageForm' onSubmit={handleSend} className={styles.form}>
         <label htmlFor="pet-select">Choose nick:</label>
 
         <select name="pets" id="pet-select" onChange={(e) => setNameValue(e.target.value)} value={nameValue} >
@@ -56,7 +85,8 @@ const Chat = () => {
 
         <input type="text" name='msg' onChange={(e) => setMsgValue(e.target.value)} value={msgValue} />
 
-        <input type="submit" value='Send' />
+        <input type="submit" value='Enter' />
+        <input type="button" value='Clear' onClick={handleClear} />
       </form>
     </>
   );

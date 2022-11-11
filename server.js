@@ -16,13 +16,13 @@ io.on('connection', (socket) => {
   const id = uuidv4();
   clients.id = socket;
 
-  socket.on('handleSend', function(data) {
+  socket.on('ping', function(data) {
     messages.push(data);
-    io.emit('pull', messages);
+    io.emit('pong', messages);
   });
-
-  socket.on('openChat', function() {
-    io.emit('getHistory', messages);
+  socket.on('clear', function() {
+    messages = [];
+    io.emit('pong', messages);
   });
 });
 server.listen(8000);
