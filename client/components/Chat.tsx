@@ -1,5 +1,6 @@
 import { io } from 'socket.io-client';
 import { useState, useEffect } from 'react';
+import styles from '../styles/List.module.scss';
 
 const socket = io('http://localhost:8000/', { transports: ['websocket'] });
 
@@ -22,16 +23,24 @@ const Chat = () => {
   // });
 
   socket.on('getHistory', (data) => {
-    setHistory([...history, data]);
+    setHistory([data]);
   });
 
-  socket.on('pull', (data) => {
-    setHistory([...history, data]);
+  socket.on('pull', (msgPulled) => {
+    setHistory(msgPulled);
+    // setHistory([...history, data]);
     // console.log(history);
   });
 
   return (
     <>
+      <ul className={styles.list}>
+        {history && history.map((el, index) => {
+          if (el.client) {
+            return (<li key={index}>{`${el.client} said: ${el.post}`}</li>
+            )}
+        })}
+      </ul>
       <form id='messageForm' onSubmit={handleSend}>
         <label htmlFor="pet-select">Choose nick:</label>
 
@@ -49,11 +58,6 @@ const Chat = () => {
 
         <input type="submit" value='Send' />
       </form>
-      <ul>
-        {history && history.map((el, index) => (
-          <li key={index}>{`${el.client} said: ${el.post}`}</li>
-        ))}
-      </ul>
     </>
   );
 };

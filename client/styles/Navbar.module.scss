@@ -10,6 +10,7 @@
   height: 100%;
   width: 100%;
   background-color: #ed5777;
+  // background-color: #7c3c74;
   transition: all ease-in-out .51s;
   box-shadow: 0px 0px 0px 0px #fff inset;
 }
@@ -18,5 +19,6 @@
 }
 .active:hover, .link:hover {
   background-color: #ed57775e;
+  // background-color: #7c3c7373;
   filter: brightness(150%);
 }

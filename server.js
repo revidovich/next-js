@@ -17,8 +17,8 @@ io.on('connection', (socket) => {
   clients.id = socket;
 
   socket.on('handleSend', function(data) {
-    io.emit('pull', data);
     messages.push(data);
+    io.emit('pull', messages);
   });
 
   socket.on('openChat', function() {
