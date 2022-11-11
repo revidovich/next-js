@@ -1,11 +1,12 @@
 ## Next js
+  
+[Ссылка на проект без вебсокетов](https://next-f8ailyqpn-revidovich.vercel.app)  
+  
+<img width="743" alt="image" src="https://user-images.githubusercontent.com/63742797/201438254-b591da26-0d9f-46c1-976d-cd64e4e8d028.png">
 
-Ссылка на проект без вебсокетов: (https://next-f8ailyqpn-revidovich.vercel.app/)[https://next-f8ailyqpn-revidovich.vercel.app/ ] 
-
-Чтобы посмотреть чат нужно  
-Склонировать приложение,  
-запустить сервер npx nodemon server.js  
-запустить клиент npm run dev 
+Чтобы посмотреть чат нужно cклонировать приложение,  
+запустить сервер npx nodemon server.js,  
+запустить клиент npm run dev.  
 
 ### В планах  
  
@@ -28,13 +29,13 @@
   
 ssr (by 1 - getServerSideProps) vs ssg (all - getStaticPaths)  
   
-Решить проблему с svg  
+Решить проблему с SVG  
     
-Ход работ:  
+### Ход работ:  
 
 npx create-next-app next-js  
 % code .  
-get data from jsonplaceholder API  
-added TS  
-added Node.js server  
-added https://www.npmjs.com/package/socket.io  
+получение данных с jsonplaceholder API  
+тайпскрипт  
+сервер на Node.js  
+вебсокеты https://www.npmjs.com/package/socket.io  
