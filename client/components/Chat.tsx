@@ -1,46 +1,60 @@
-import WebSocket from 'ws';
-import { useState } from 'react';
+import { io } from 'socket.io-client';
+import { useState, useEffect } from 'react';
 
-const ws = new WebSocket('ws://127.0.0.1:8000');
-
-export async function getStaticProps(context) {
-  
-  ws.onmessage = (message) => {
-    console.log(JSON.parse(message.data));
-    const messages = JSON.parse(message.data);
-    // messages.forEach(element => {
-      
-    // });
-    return (
-      <div>{messages}</div>
-    )
-  };
-
-  const response = await 'yy';
-
-  return {
-      props: {
-          posts: response,
-      },
-  };
-};
+const socket = io('http://localhost:8000/', { transports: ['websocket'] });
 
 const Chat = () => {
   const [nameValue, setNameValue] = useState('');
   const [msgValue, setMsgValue] = useState('');
+  const [history, setHistory] = useState([]);
 
-
-  const send = (event) => {
+  const handleSend = (event) => {
     event.preventDefault();
-    ws.send(JSON.stringify({ nameValue, msgValue }))
-  }
+    socket.emit('handleSend', { client: nameValue, post: msgValue })
+  };
+
+  useEffect(() => {
+    socket.emit('openChat');
+  }, []);
+
+  // socket.on('openChat', (data) => {
+  //   setHistory([...history, data]);
+  // });
+
+  socket.on('getHistory', (data) => {
+    setHistory([...history, data]);
+  });
+
+  socket.on('pull', (data) => {
+    setHistory([...history, data]);
+    // console.log(history);
+  });
 
   return (
-    <form id='messageForm' onSubmit={send}>
-      <input type="text" name='name' onChange={(e) => setNameValue(e.target.value)} value={nameValue} />
-      <input type="text" name='msg' onChange={(e) => setMsgValue(e.target.value)} value={msgValue} />
-      <input type="submit" value='send' />
-    </form>
+    <>
+      <form id='messageForm' onSubmit={handleSend}>
+        <label htmlFor="pet-select">Choose nick:</label>
+
+        <select name="pets" id="pet-select" onChange={(e) => setNameValue(e.target.value)} value={nameValue} >
+          <option value="">--Please choose an option--</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="hamster">Hamster</option>
+          <option value="parrot">Parrot</option>
+          <option value="spider">Spider</option>
+          <option value="goldfish">Goldfish</option>
+        </select>
+
+        <input type="text" name='msg' onChange={(e) => setMsgValue(e.target.value)} value={msgValue} />
+
+        <input type="submit" value='Send' />
+      </form>
+      <ul>
+        {history && history.map((el, index) => (
+          <li key={index}>{`${el.client} said: ${el.post}`}</li>
+        ))}
+      </ul>
+    </>
   );
 };
 

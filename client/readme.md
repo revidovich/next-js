@@ -28,4 +28,6 @@ ssr (by 1 - getServerSideProps) vs ssg (all - getStaticPaths)
   
 Решить проблему с svg  
     
-добавила тс
+added TS  
+added https://www.npmjs.com/package/socket.io  
+added Node.js server
