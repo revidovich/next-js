@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Heading from "../components/Heading";
+import Chat from "../components/Chat";
 import Socials from '../components/Socials';
 
 export const getStaticProps = async () => {
@@ -31,6 +32,7 @@ const Index = ({ socials }) => {
       </Head>
       <Heading text='My next.js application' />
       <Socials socials={socials} />
+      <Chat />
     </>
   );
 };
