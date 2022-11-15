@@ -5,11 +5,11 @@
 запустить сервер npx nodemon server.js,  
 запустить клиент npm run dev,  
 Открыть приложение в разных вкладках, таким образом у вас будет live-чат.
-
-[Ссылка на проект без вебсокетов](https://next-f8ailyqpn-revidovich.vercel.app)  
   
 <img width="743" alt="image" src="https://user-images.githubusercontent.com/63742797/201438254-b591da26-0d9f-46c1-976d-cd64e4e8d028.png">
+  
 
+[Ссылка на проект без вебсокетов](https://next-f8ailyqpn-revidovich.vercel.app), Vercel не поддерживает кастомный сервер.   
 
 ### В планах  
  
